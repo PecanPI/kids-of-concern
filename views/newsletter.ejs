@@ -1,0 +1,25 @@
+<section id='newsletter'>
+    <div class="container-fluid">
+        <h4 class='newsletter-heading'>Sign up for Perry Logan's newsletter for updates on the next installment of Kids of Concern</h4>
+        <form class="mail-sign-up" action="/" method="post">
+            <div class='row email-signup'>
+                <!-- <label for="input-email" class="sr-only">Email Address</label> -->
+                <input type="email" class='form-control-bottom col col-sm-9' placeholder="Email" name='email'
+                    required>
+                <button class='btn btn-block col col-sm-3 email-button' type='submit'> Sign Up!</button>
+                <% if(success_message.length > 0){ %>
+                <div class='alert alert-success col col-sm-12'>
+                    <p><%= success_message %> </p>
+                </div>
+                <%}%>
+            <% if(failure_message){ %>
+                <div class='alert alert-failure col col-sm-12'>
+                    <%= failure_message %>
+                </div>
+                <%}%>
+            
+        </div>
+        </form>
+        <div class="section-border"></div>
+</div>
+</section>

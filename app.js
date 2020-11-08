@@ -1,15 +1,13 @@
+require('dotenv').config();
 
 const express = require('express');
-
 const bodyParser = require('body-parser')
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 const app = express();
 const port = 3000;
-const expressValidator = require('express-validator');
-const flash = require('connect-flash');
+const flash = require('connect-flash')
 const session = require('express-session')
 const cookieParser = require("cookie-parser")
-
 
 
 
@@ -17,36 +15,32 @@ const cookieParser = require("cookie-parser")
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'));
 
+app.set("view engine", "ejs")
+
 //Flash Middleware
 
-app.use(cookieParser('keyboard cat'));
+app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(session({
-    secret: 'keyboard cat',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true }
+    cookie: { maxAge: 60000, }
 }))
-app.use(function (req, res, next) {
-    res.locals.messages = require('express-messages')(req, res);
-    next();
-});
 app.use(flash());
 
-
-app.set("veiw engine", "ejs")
-
-
 app.get("/", (req, res) => {
-
-    res.sendFile(__dirname + '/index.html');
+    // console.log(req.flash('success_message'), test);
+    res.render('index', {
+        success_message: req.flash('success_message'),
+        failure_message: req.flash('failure_message')
+    })
 });
 
 
-app.post("/mail-sign-up", (req, res) => {
-    console.log(req.body);
-    res.render('/', { messages: req.flash('info', 'Flash is Back!') });
+app.post("/", (req, res) => {
     const email = req.body.email;
-
+    req.flash('success_message','test message')
+    res.redirect('/#newsletter')
     const data = {
         member: [{
             email_address: email,

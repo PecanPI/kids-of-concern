@@ -2,21 +2,51 @@ body{
     
     text-align: center;
     font-family: 'Montserrat', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    background-color: #f0f5f9;
+    color: #1e2022;
     
 }
 
 .perry-header{
-    font-size: 1.2rem;
     font-family: 'Charm', cursive;
-    padding: 3% 15% 2%;
+    margin: 20px 10% 20px;
+    text-align: center;
     
 }
 h1{
-    text-align: center;
-    font-size: 5em;
+  font-size: 4rem;
+}
+.navbar{
+  background-color: #1e2022;
+  
+}
+.navbar-toggler {
+  background-image: url("data:image/svg+xml;..");
+  color: #f0f5f9;
 }
 
+.nav-link{
+  color: #f0f5f9;
+}
+
+h4{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding:5%;
+}
+
+h2{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  padding-bottom: 3%;
+}
 h5{
+    
+    font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
     font-weight: 900;
 }
@@ -41,7 +71,7 @@ h5{
 /* Containers */
 
 .container-fluid{
-    padding: 5% 15%;
+    padding: 3% 15%;
   }
 
   /* Navigation Bar */
@@ -76,14 +106,14 @@ object-fit: cover;
     margin-bottom: 10px; /* Added */
     width: 100%;
     text-align: left;
-    margin-bottom: 15%;
+    margin-bottom: 5%;
   }
 
 .book-card{
-    margin-bottom: 15%;
+    margin-bottom: 5%;
 }
 .about-containter{
-    margin-bottom: 15%;
+    margin-bottom: 5%;
 }
 .section-border{
     border-style: groove;
@@ -94,3 +124,18 @@ object-fit: cover;
 .social-icon {
     margin: 20px 10px;
   }
+
+  .sales-buttons{
+    margin-bottom: 10px;
+  }
+  .sales-button-group{
+    margin-bottom: 5%;
+  }
+
+.email-button{
+  background-color: #1e2022;
+  color: #f0f5f9;
+}
+.email-signup{
+  margin-bottom: 5%;
+}

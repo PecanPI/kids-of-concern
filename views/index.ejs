@@ -1,144 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perry Logan</title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap" rel="stylesheet">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-
-</head>
-
-<body>
-    <% console.log('Test') %>
-    <div class='alert alert-danger'><%= info =></div>
-    <section class="title" id='title'>
-        <div class='perry-header'>
-            <h1>Perry Logan</h1>
-        </div>
-
-        <!-- Nav bar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark flex-nowrap">
-            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse w-100 justify-content-center" id="navbarNav">
-                <ul class="navbar-nav nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#kids-of-concern">Kids of Concern</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </section>
+<%-include('header')-%>
     <section class="book-ad" id='kids-of-concern'>
-        <div class='container-fluid '>
-            <div class='book-card'>
-                <div class="card mb-3" style="max-width: 1600px;">
-                    <div class="row no-gutters">
-                        <div class="col-lg-5">
-                            <img src="images/Kids of Concern - Final Version.png" class="card-img" alt="...">
-                        </div>
-                        <div class="col-lg-7 ">
-                            <div class="card-body">
-                                <h5 class="card-title">Kids of Concern</h5>
-                                <p class="card-text">
-                                <div class='review'>
-
-                                    Magnificent!!  This book ‘Kids of Concern’ has been masterfully crafted with
-                                    suspense, compassion and intrigue, that makes this book hard to put down.  The
-                                    characters and plot have been intricately woven and it is easy to form pictures in
-                                    your mind as his writing plays out like a movie.  Perry Logan is a brilliant writer,
-                                    and I cannot wait to read more from him.  Highly recommended!
-
-                                    <div class='reviewer'><em>Janinr Fulla</em></div>
-                                </div>
-                                <div class='review'>
-
-                                    Kids of Concern grabbed my imagination early and made it hard to put it down. If you
-                                    enjoy a story with lots of mystery and left and right turns then this book is for
-                                    you. Great characters, lots of story lines and an ending I never saw coming.
-                                    <div class='reviewer'><em>Steve Parson</em></div>
-                                </div>
-                                </p>
-                                <button class="btn btn-dark card-button btn-lg">Purchase!</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="section-border"></div>
-        </div>
+        <%- include('bookad.ejs') %>
 
     </section>
     <section class='About' id='about'>
-        <div class='container-fluid'>
-            <div class='about-containter'>
-                <img class='perry-image' src="images/reza-biazar-eSjmZW97cH8-unsplash.jpg" alt="image of perry"
-                    srcset="">
-                <p>Canadian author, Perry Logan, woke up on the couch one day with the idea for Kids of Concern. He got
-                    up and started writing.
-                    Kids of Concern is a North American political adventure novel that tries hard to stay ahead of the
-                    real-life plot twists happening today. Backroom politics, espionage, scandals, and futuristic
-                    technology all combine in this face paced novel that takes you on an adventure where the kids are
-                    not the only concern. </p>
-            </div>
-            <div class="section-border"></div>
-        </div>
+        <%- include('about.ejs') %>
 
     </section>
     <section class='cta'>
         <!-- <div class='container-fluid'>
             <div class="section-border"></div>
         </div>-->
-    </section> 
-
-    <section id='newsletter'>
-        <div class="container-fluid">
-            <form class="mail-sign-up" action="/mail-sign-up" method="post">
-                <label for="input-email" class="sr-only">Email Address</label>
-                <input type="email" class='form-control-bottom' placeholder="Email" name='email' required>
-                <button class='btn btn-lg btn-primary btn-block'type='submit'> Sign Up!</button>
-            </form>
-        </div>
-        <%- include('messages') -%>
     </section>
-    <section class='footer' id='contact'>
-        <div class='container-fluid'>
-            <footer class="white-section" id="footer">
-                <div class="container-fluid">
-                  <i class="social-icon fab fa-facebook-f"></i>
-                  <i class="social-icon fab fa-twitter"></i>
-                  <i class="social-icon fab fa-instagram"></i>
-                  
-                  <p class='mt-5 mb-3 text-muted'> Copyright © 2020</p>
-                </div>
-              </footer>
-        </div>
-    </section>
-</body>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-    integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
-    crossorigin="anonymous"></script>
-
-</html>
+    <%-include('newsletter')-%>
+    
+         <%-include('footer')-%>   
+    
